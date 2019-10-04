@@ -17,7 +17,7 @@ case $1 in
     # link the agent on start if needed
     # . ${JOB_DIR}/bin/link-agent.sh
 
-    /opt/CrowdStrike/falconctl -s -f --cid=p("customer_id")
+    /opt/CrowdStrike/falconctl -s -f --cid=<% p('customer_id') %>
 
     /opt/CrowdStrike/falcond
 
