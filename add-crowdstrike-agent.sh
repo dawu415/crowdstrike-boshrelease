@@ -14,3 +14,10 @@ mv ./install/tmp ./packages/crowdstrike-agent/spec
 bosh int runtime-config/crowdstrike.yml \
      --var=crowdstrike_version=${version} \
      --var=customer_id=$2 > generated_runtime_config.yml
+
+cat << EOF >> ./config/final.yml
+blobstore:
+  provider: local
+  options:
+    blobstore_path: $3
+EOF
