@@ -15,6 +15,8 @@ bosh int runtime-config/crowdstrike.yml \
      --var=crowdstrike_version=${version} \
      --var=customer_id=$2 > generated_runtime_config.yml
 
+rm -rf ./config/final.yml
+
 cat << EOF >> ./config/final.yml
 blobstore:
   provider: local
