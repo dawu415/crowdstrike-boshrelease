@@ -1,0 +1,4 @@
+dependencies: []
+files:
+- ((crowdstrike_deb_file))
+name: crowdstrike-agent
