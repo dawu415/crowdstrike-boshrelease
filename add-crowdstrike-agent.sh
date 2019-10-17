@@ -7,7 +7,7 @@ filename=$(basename $1)
 version=$(echo $filename | sed -e 's/[a-zA-Z-]*_//' -e 's/_.*//')
 bosh add-blob $1 ${filename}
 
-bosh int ./packages/crowdstrike-agent/spec \
+bosh int packages-spec.template \
      --var=crowdstrike_deb_file=${filename} > ./install/tmp
 
 mv ./install/tmp ./packages/crowdstrike-agent/spec
